@@ -5,7 +5,5 @@ module HeraCms
     skip_after_action(*filters, raise: false)
     skip_around_action(*filters, raise: false)
 
-    protect_from_forgery with: :exception
-
   end
 end
