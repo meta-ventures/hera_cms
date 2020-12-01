@@ -1,0 +1,37 @@
+class <%= migration_class_name %> < ActiveRecord::Migration<%= migration_version %>
+  def change
+    create_table :hera_links do |t|
+      t.string :identifier, default: ""
+      t.string :inner_text
+      t.string :path
+      t.string :classes, default: ""
+      t.string :style, default: ""
+
+      t.timestamps
+    end
+
+    create_table :hera_media do |t|
+      t.string :identifier, default: ""
+      t.string :upload
+      t.string :classes, default: ""
+      t.string :style, default: ""
+
+      t.timestamps
+    end
+
+    create_table :hera_texts do |t|
+      t.string :identifier, default: ""
+      t.string :classes, default: ""
+      t.text :inner_text
+      t.string :style, default: ""
+
+      t.timestamps
+    end
+
+    create_table :hera_forms do |t|
+      t.string :send_to
+
+      t.timestamps
+    end
+  end
+end
