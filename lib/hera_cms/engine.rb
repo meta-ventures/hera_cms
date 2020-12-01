@@ -8,9 +8,19 @@ module HeraCms
     #   end
     # end
 
-    # initialize "hera_cms.load_static_assets" do |app|
-    #   app.middleware.use ::ActionDispatch::Static, "#{root}/public"
-    # end
+    initializer "hera_cms.assets.precompile" do |app|
+      if defined?(Sprockets) && Sprockets::VERSION >= "4"
+        app.config.assets.precompile << "hera_cms/application.js"
+        app.config.assets.precompile << "hera_cms/application.css"
+        app.config.assets.precompile << "hera_cms/hera_white.png"
+      else
+        # use a proc instead of a string
+        app.config.assets.precompile << proc { |path| path =~ /\Ahera_cms\/application\.(js|css)\z/ }
+        app.config.assets.precompile << proc { |path| path =~ /\Ahera_cms\/.+\.(eot|svg|ttf|woff|woff2)\z/ }
+        app.config.assets.precompile << proc { |path| path == "hera_cms/hera_white.png" }
+      end
+    end
+
     config.generators do |g|
       g.test_framework :rspec
     end

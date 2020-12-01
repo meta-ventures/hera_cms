@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+.hera-navbar {
+  top: 70px;
+  right: 0;
+  position: fixed;
+  justify-content: space-between;
+  height: 200px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  z-index: 100;
+  background-color: #333333;
+  color: white;
+}
+
+.hera-navbar img {
+  object-fit: contain;
+  margin: -65px 0 -25px 0;
+}
+.hera-navbar a {
+  color: white;
+}
+
+#hera-edit-button {
+  padding: 8px 16px;
+  transition: background 0.3s ease;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  border-width: 0px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hera-edit-button-on {
+  background-color: #f1cf00;
+}
+
+.hera-edit-button-off {
+  background-color: #EE5F5B;
+}
