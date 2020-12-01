@@ -1,5 +1,5 @@
 class Hera
   def self.test
-    puts "Successful"
+    return "Successful"
   end
 end
