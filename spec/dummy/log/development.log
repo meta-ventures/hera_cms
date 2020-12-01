@@ -687,3 +687,1856 @@ Processing by HeraCms::DashboardController#home as HTML
 Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3728)
 
 
+Started GET "/" for ::1 at 2020-12-01 13:56:11 +0400
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.4) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.4) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started POST "/rails/actions" for ::1 at 2020-12-01 13:56:15 +0400
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1721091371569202325)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRestaurants (20201201095510)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying, "city" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201201095510"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-01 09:56:15.134799"], ["updated_at", "2020-12-01 09:56:15.134799"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1721091371569202325)[0m
+Started GET "/" for ::1 at 2020-12-01 13:56:15 +0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:15
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1748)
+Completed 200 OK in 51ms (Views: 47.8ms | ActiveRecord: 1.7ms | Allocations: 21242)
+
+
+Started GET "/" for ::1 at 2020-12-01 13:56:17 +0400
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:15
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1032)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 2736)
+
+
+Started GET "/restaurants/new" for ::1 at 2020-12-01 13:56:36 +0400
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 10.7ms | Allocations: 4880)
+  Rendered restaurants/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 5229)
+Completed 200 OK in 19ms (Views: 13.1ms | ActiveRecord: 2.0ms | Allocations: 10104)
+
+
+Started POST "/restaurants" for ::1 at 2020-12-01 13:56:41 +0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"authenticity_token"=>"cpjD3AY32wk7729TLpzmEqBLTqhYsOXmhme8a649gEfRnzn98FOez0GoaX7ZfCjyh7aKb9WDUhSE1cbCZs/JeA==", "restaurant"=>{"name"=>"Butcher", "city"=>"SP"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/restaurants_controller.rb:26:in `create'
+  [1m[36mRestaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "city", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Butcher"], ["city", "SP"], ["created_at", "2020-12-01 09:56:41.902887"], ["updated_at", "2020-12-01 09:56:41.902887"]]
+  ↳ app/controllers/restaurants_controller.rb:26:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/restaurants_controller.rb:26:in `create'
+Redirected to http://localhost:3000/restaurants/1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms | Allocations: 3033)
+
+
+Started GET "/restaurants/1" for ::1 at 2020-12-01 13:56:41 +0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:51:in `set_restaurant'
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 637)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 3181)
+
+
+Started GET "/restaurants" for ::1 at 2020-12-01 13:56:43 +0400
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:15
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1164)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 2868)
+
+
+Started GET "/restaurants/1" for ::1 at 2020-12-01 13:56:46 +0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:51:in `set_restaurant'
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 438)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 2717)
+
+
+Started GET "/restaurants" for ::1 at 2020-12-01 13:56:47 +0400
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:15
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1171)
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.2ms | Allocations: 2878)
+
+
+Started GET "/restaurants" for ::1 at 2020-12-01 14:23:59 +0400
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:15
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1480)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 4177)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:24:03 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 1.0ms | Allocations: 677)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2798)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/rayancastro/code/horta-tech/hera_cms/spec/dummy/app/views"
+  * "/Users/rayancastro/code/horta-tech/hera_cms/app/views"
+  * "/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.4/app/views"
+):
+    1: <h1>Hello Hera CMS Engine</h1>
+    2: 
+    3: <%= render 'shared/navbar' %>
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:433:in `find_template'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:428:in `find_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:305:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:24:26 +0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 2.3ms | Allocations: 1494)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4891)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/rayancastro/code/horta-tech/hera_cms/spec/dummy/app/views"
+  * "/Users/rayancastro/code/horta-tech/hera_cms/app/views"
+  * "/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.4/app/views"
+):
+    1: <h1>Hello Hera CMS Engine</h1>
+    2: 
+    3: <%= render 'shared/navbar' %>
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:433:in `find_template'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:428:in `find_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:305:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:24:39 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 940)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 2.2ms | Allocations: 1346)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3513)
+
+
+  
+ActionView::Template::Error (The asset "hera_white.png" is not present in the asset pipeline.
+):
+    1: <div class="hera-navbar">
+    2:   <%= image_tag("hera_white.png") %>
+    3:   <div>
+    4:     Modo Edição:
+    5:     <button id="edit-button" data-mode="view">Off</button>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:84:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:376:in `image_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:452:in `resolve_image_source'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:345:in `image_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:357:in `block in render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:346:in `render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:317:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:25:50 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 796)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 1.3ms | Allocations: 871)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1170)
+
+
+  
+ActionView::Template::Error (The asset "hera_white.png" is not present in the asset pipeline.
+):
+    1: <div class="hera-navbar">
+    2:   <%= image_tag("hera_white.png") %>
+    3:   <div>
+    4:     Modo Edição:
+    5:     <button id="edit-button" data-mode="view">Off</button>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:84:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:376:in `image_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:452:in `resolve_image_source'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:345:in `image_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:357:in `block in render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:346:in `render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:317:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:25:51 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 796)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 1.2ms | Allocations: 870)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1166)
+
+
+  
+ActionView::Template::Error (The asset "hera_white.png" is not present in the asset pipeline.
+):
+    1: <div class="hera-navbar">
+    2:   <%= image_tag("hera_white.png") %>
+    3:   <div>
+    4:     Modo Edição:
+    5:     <button id="edit-button" data-mode="view">Off</button>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:84:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:376:in `image_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:452:in `resolve_image_source'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:345:in `image_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:357:in `block in render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:346:in `render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:317:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:26:12 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 25.1ms | Allocations: 11241)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 25.9ms | Allocations: 11641)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 13792)
+
+
+  
+ActionView::Template::Error (hera_cms/hera_white.png):
+    1: <div class="hera-navbar">
+    2:   <%= image_tag("hera_cms/hera_white.png") %>
+    3:   <div>
+    4:     Modo Edição:
+    5:     <button id="edit-button" data-mode="view">Off</button>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:372:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:338:in `digest_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:326:in `asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:103:in `block in resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:243:in `block in resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `each'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `detect'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:102:in `resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:80:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:376:in `image_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:452:in `resolve_image_source'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:345:in `image_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:357:in `block in render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:346:in `render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:317:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:26:36 +0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 7.3ms | Allocations: 6388)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 8.6ms | Allocations: 7038)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 10435)
+
+
+  
+ActionView::Template::Error (hera_cms/hera_white.png):
+    1: <div class="hera-navbar">
+    2:   <%= image_tag("hera_cms/hera_white.png") %>
+    3:   <div>
+    4:     Modo Edição:
+    5:     <button id="edit-button" data-mode="view">Off</button>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:372:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:338:in `digest_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:326:in `asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:103:in `block in resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:243:in `block in resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `each'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `detect'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:102:in `resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:80:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:376:in `image_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:452:in `resolve_image_source'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:345:in `image_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:357:in `block in render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:346:in `render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:317:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:27:07 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 2677)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 3.0ms | Allocations: 2753)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3059)
+
+
+  
+ActionView::Template::Error (hera_cms/hera_white.png):
+    1: <div class="hera-navbar">
+    2:   <%= image_tag("hera_cms/hera_white.png") %>
+    3:   <div>
+    4:     Modo Edição:
+    5:     <button id="edit-button" data-mode="view">Off</button>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:372:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:338:in `digest_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:326:in `asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:103:in `block in resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:243:in `block in resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `each'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `detect'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:102:in `resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:80:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:376:in `image_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:452:in `resolve_image_source'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:345:in `image_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:357:in `block in render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:346:in `render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:317:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:28:06 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 7.5ms | Allocations: 6389)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 8.8ms | Allocations: 7039)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 10436)
+
+
+  
+ActionView::Template::Error (hera_cms/hera_white.png):
+    1: <div class="hera-navbar">
+    2:   <%= image_tag("hera_cms/hera_white.png") %>
+    3:   <div>
+    4:     Modo Edição:
+    5:     <button id="edit-button" data-mode="view">Off</button>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:372:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:338:in `digest_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:326:in `asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:103:in `block in resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:243:in `block in resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `each'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `detect'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:102:in `resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:80:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:376:in `image_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:452:in `resolve_image_source'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:345:in `image_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:357:in `block in render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:346:in `render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:317:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:31:10 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 28.1ms | Allocations: 23705)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 29.6ms | Allocations: 24355)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 27752)
+
+
+  
+ActionView::Template::Error (hera_cms/hera_white.png):
+    1: <div class="hera-navbar">
+    2:   <%= image_tag("hera_cms/hera_white.png") %>
+    3:   <div>
+    4:     Modo Edição:
+    5:     <button id="edit-button" data-mode="view">Off</button>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:372:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:338:in `digest_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:326:in `asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:103:in `block in resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:243:in `block in resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `each'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `detect'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:242:in `resolve_asset'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:102:in `resolve_asset_path'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:80:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:376:in `image_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:452:in `resolve_image_source'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:345:in `image_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:357:in `block in render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:346:in `render_partial'
+actionview (6.0.3.4) lib/action_view/renderer/partial_renderer.rb:317:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:65:in `render_partial_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:53:in `render_partial'
+actionview (6.0.3.4) lib/action_view/helpers/rendering_helper.rb:38:in `render'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:3
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:33:29 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 7.2ms | Allocations: 6028)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 8.4ms | Allocations: 6675)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 10086)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:35:59 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 702)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 3.3ms | Allocations: 2635)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4786)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:36:13 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 684)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 9.6ms | Allocations: 5180)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 7328)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:42:01 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 685)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 9.5ms | Allocations: 6074)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 8246)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:48:57 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 10.8ms | Allocations: 7280)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 9421)
+
+
+  
+ActionView::Template::Error (The asset "hera_cms/application.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag    'hera_cms/application', media: 'all' %>
+    2: <%= javascript_include_tag "hera_cms/application" %>
+    3: 
+    4: <h1>Hello Hera CMS Engine</h1>
+    5: <%= render 'hera_cms/shared/navbar' %>
+  
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:84:in `compute_asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:201:in `asset_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_url_helper.rb:319:in `javascript_path'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:93:in `block in javascript_include_tag'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:92:in `map'
+actionview (6.0.3.4) lib/action_view/helpers/asset_tag_helper.rb:92:in `javascript_include_tag'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:151:in `block in javascript_include_tag'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:141:in `map'
+sprockets-rails (3.2.2) lib/sprockets/rails/helper.rb:141:in `javascript_include_tag'
+/Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb:2
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.4) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:49:35 +0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 708)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 74.6ms | Allocations: 27733)
+Completed 200 OK in 81ms (Views: 79.4ms | ActiveRecord: 0.0ms | Allocations: 31144)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:50:12 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 596)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 11.3ms | Allocations: 7622)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 7936)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 14:51:19 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 696)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 4.5ms | Allocations: 4354)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 6523)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 15:01:15 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 596)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 9.8ms | Allocations: 7475)
+Completed 200 OK in 10ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 7789)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 19:52:38 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 696)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 6.3ms | Allocations: 4329)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 6484)
+
+
+Started GET "/" for ::1 at 2020-12-01 19:52:41 +0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 82)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 6524)
+
+
+Started GET "/hera_cms" for ::1 at 2020-12-01 19:52:44 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 596)
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 3.7ms | Allocations: 3869)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 4184)
+
+
