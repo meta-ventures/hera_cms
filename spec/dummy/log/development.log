@@ -680,3 +680,10 @@ Processing by HeraCms::DashboardController#home as HTML
 Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2333)
 
 
+Started GET "/hera_cms" for ::1 at 2020-12-01 13:03:19 +0400
+Processing by HeraCms::DashboardController#home as HTML
+  Rendering /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb
+  Rendered /Users/rayancastro/code/horta-tech/hera_cms/app/views/hera_cms/dashboard/home.html.erb (Duration: 0.6ms | Allocations: 316)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3728)
+
+

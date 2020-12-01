@@ -11,5 +11,8 @@ module HeraCms
     # initialize "hera_cms.load_static_assets" do |app|
     #   app.middleware.use ::ActionDispatch::Static, "#{root}/public"
     # end
+    config.generators do |g|
+      g.test_framework :rspec
+    end
   end
 end
