@@ -40,6 +40,7 @@
 #hera-edit-button {
   padding: 8px 16px;
   transition: background 0.3s ease;
+  background-color: #EE5F5B;
   font-size: 0.9em;
   font-weight: bold;
   text-align: center;
@@ -49,9 +50,104 @@
 }
 
 .hera-edit-button-on {
-  background-color: #f1cf00;
+  background-color: #f1cf00 !important;
 }
 
-.hera-edit-button-off {
-  background-color: #EE5F5B;
+
+.hera-background-layer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 3;
+  transition: .5s;
+}
+
+.hera-clickable {
+  pointer-events: all;
+}
+
+.hera-editable {
+  position: relative;
+  z-index: 1;
+}
+
+.hera-highlight-layer{
+  position: relative;
+  z-index: 6;
+  background: $body-bg;
+  transition: .5s;
+  border-radius: 3px;
+  cursor: pointer;
+  color: black !important;
+}
+
+.hera-edit-icon {
+  color: red;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.hera-form-destroy {
+  color: $white;
+  font-size: 1.2em;
+  padding: 0px 16px;
+  transition: .5s;
+  background-color: black;
+}
+.hera-form-destroy:hover{
+  color: $red;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.hera-editable-wrapper{
+  position: relative;
+  border-radius: 8px;
+}
+
+
+
+
+
+.hera-form-box {
+  position: absolute;
+  background: $body-bg;
+  width: 300px !important;
+  height: 300px;
+  z-index: 6;
+  padding: 8px !important;
+  border-radius: 3px;
+  top: 50%;
+  left: 50%;
+  font-size: 20px !important;
+  font-weight: normal !important;
+  border: 1px solid black;
+}
+
+.hera-form-box form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.hera-form-box textarea {
+  flex: 1 0 auto;
+}
+.hera-form-box input {
+  flex: 1 0 auto;
+}
+.hera-form-box input:last-of-type{
+  flex: 0 1 auto;
+  font-family: $body-font !important;
+  font-size: 1rem !important;
+}
+.hera-form-box .form-destroy {
+  position: absolute;
+  top: -24px;
+  right: 0;
+  font-size: 1rem;
 }

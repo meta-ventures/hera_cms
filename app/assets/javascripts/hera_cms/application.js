@@ -1,36 +1,40 @@
 console.log('Hera CMS Javascript ON');
 
-// Seleciona todos os elementos editáveis da página
-let editables = document.querySelectorAll('.js-editable')
+// Select all editable elements on the page
+let editables = document.querySelectorAll('.hera-editable')
 
-// Adiciona/remove a edicao para todos os editaveis
+
 const allowEdit = () => {
+  // Add listeners for all editables [edit mode]
   editables.forEach((editable) => {
     editable.addEventListener('mouseenter', displayEditor);
     editable.addEventListener('mouseleave', hideEditor);
   });
 };
+
+
 const lockEdit = () => {
+  // Remove listeners for all editables [view mode]
   editables.forEach((editable) => {
     editable.removeEventListener('mouseenter', displayEditor);
     editable.removeEventListener('mouseleave', hideEditor);
   });
 };
-// Remove editaveis quando toggle off é utilizado
+
 const toggleOff = () => {
-  // Remove outros forms possivelmente abertos
-  let formBox = document.querySelector(".form-box");
+  // Remove open forms and remove highlights that could be still active [switching from edit to view mode]
+  let formBox = document.querySelector(".hera-form-box");
   if(formBox){
     formBox.parentNode.removeChild(formBox);
   };
-  // Remove highlight dos campos fechados
+
   editables.forEach((editable) => {
-    if (editable.classList.contains('highlight-layer')){
-      editable.classList.remove('highlight-layer');
+    if (editable.classList.contains('hera-highlight-layer')){
+      editable.classList.remove('hera-highlight-layer');
     }
   });
-  // Troca wrapper com editavel
-  let wrapper = document.querySelector('.editable-wrapper');
+  // Swap wrapper with editable one (?)
+  let wrapper = document.querySelector('.hera-editable-wrapper');
   if(wrapper){
     wrapper.parentNode.replaceChild(wrapper.firstChild, wrapper);
   };
@@ -38,79 +42,78 @@ const toggleOff = () => {
 
 
 const toggle_edit_loader = (e) => {
-  // Essa função altera entre o Modo edição e o Modo View.
-  // No modo edição, todos os links, textos e imagens editáveis precisam ter um botão de editar quando o mouse passa por cima deles.
-  // Esses eventos só podem existir no edit mode. No view mode nada acontece.
-
-  // Objetivo geral da função: Adicionar ou remover eventos em todos os itens editáveis, para que quando o mouse passe por cima deles, mostre o botão de editar.
+  // Switches between Edit Mode and View mode
+  // In edit mode, all editable links, texts and images need the following:
+    // 1. One edit button that appears on hover
+    // 2. When you click it, it opens a form that enables you to change the value of the content
+  // This events can only exist on edit mode. On view mode nothing happens.
 
   const button = e.target;
   if (button.dataset["mode"] === "edit") {
-    console.log('going to view mode');
+    console.log('Switching to view mode');
     button.innerText = "Off"
     button.dataset["mode"] = "view"
-    button.classList.toggle("edit-button-on");
+    button.classList.toggle("hera-edit-button-on");
     toggleOff();
 
-    const layer = document.querySelector(".background-layer");
+    const layer = document.querySelector(".hera-background-layer");
     document.body.removeChild(layer);
-    const slickerLayer = document.querySelector(".slicker-layer");
-    const slider = document.querySelector('.slick-track');
-    slider.removeChild(slickerLayer);
+    // const slickerLayer = document.querySelector(".slicker-layer");
+    // const slider = document.querySelector('.slick-track');
+    // slider.removeChild(slickerLayer);
     lockEdit();
   }
   else if (button.dataset["mode"] === "view") {
-    console.log('going to edit mode');
+    console.log('Switching to edit mode');
     button.innerText = "On"
-    button.classList.toggle("edit-button-on");
+    button.classList.toggle("hera-edit-button-on");
     button.dataset["mode"] = "edit"
     const layer = document.createElement("div");
-    layer.classList.add('background-layer');
-    const slickerLayer = document.createElement("div");
-    slickerLayer.classList.add('slicker-layer');
-    const slider = document.querySelector('.slick-track');
-    slider.appendChild(slickerLayer);
+    layer.classList.add('hera-background-layer');
+    // const slickerLayer = document.createElement("div");
+    // slickerLayer.classList.add('hera-slicker-layer');
+    // const slider = document.querySelector('.slick-track');
+    // slider.appendChild(slickerLayer);
     document.body.appendChild(layer);
     allowEdit();
   }
 }
 
 const displayEditor = (e) => {
-  // Objetivo geral: Mostrar o botão de edição
-  // -destacar o campo a ser editado
-  e.target.classList.add('highlight-layer');
+  // Shows the edit button for an element
+  // highlith the field to be edited
+  e.target.classList.add('hera-highlight-layer');
   e.target.addEventListener('click', createForm);
 }
 
 const hideEditor = (e) => {
-  // Objetivo geral: Remover o botão de edição
-  // -retirar campo destacado para edição
-  e.target.classList.remove('highlight-layer');
+  // Removes the edit button for an element
+  // remove highlighted field
+  e.target.classList.remove('hera-highlight-layer');
   e.target.removeEventListener('click', createForm);
 }
 
 const createForm = (e) => {
-  // Objetivo geral da função:
-  // Criar um form para edição do elemento atual, a partir do dataset do mesmo.
+  // Create a form to update the content of element in the database, using its dataset
 
-  // Previne o click do link ao clicar no form
+  // Prevent the link click when clicks on the form, and the default form behavior
   e.stopImmediatePropagation();
   e.preventDefault();
   e.target.removeEventListener('click', createForm);
   lockEdit();
 
-  // Seleciona o elemento a ser editado
+  // Selects the element to be edited
   const editable = e.currentTarget
 
-  // Obtém a base do formulário com o token de autenticidade do rails
+  // Creates the base form using rails autenthicity token
   let form = createElementFromHTML(railsFormHTML());
 
-  // Troca a rota do formulário para a rota correta de edição do elemento
+  // Updates the form action to the proper element update route, using the datase
   form.action = `/${editable.dataset['editableType']}/${editable.dataset['editableId']}`;
 
   form.enctype = 'multipart/form-data';
 
-  // Adiciona um hidden input para utilizar corretamente o método patch
+  // Add a hidden input field to properly utilize the PATCH method
 
   let i = document.createElement("input");
   i.setAttribute('type', "hidden");
@@ -119,7 +122,7 @@ const createForm = (e) => {
 
   form.appendChild(i);
 
-  // Adiciona os campos corretos no form para cada tipo de editável
+  // Add the proper inputs for each type of editable
 
   switch (editable.dataset['editableType']) {
     case 'links':
@@ -138,23 +141,23 @@ const createForm = (e) => {
       console.log(`Tipo ${editable.dataset['editableType']} não identificado.`)
   }
 
-  // Adiciona o botão de submit do formulário
+  // Add form submit button
   let s = document.createElement("input");
   s.setAttribute('type', "submit");
   s.setAttribute('value', "Atualizar");
 
   form.appendChild(s);
 
-  // Adiciona um wrapper com o editavel e o formulário dentro
+  // Add editable wrapper with form inside
   let wrapper = document.createElement("div");
-  wrapper.className = "editable-wrapper " + editable.className;
+  wrapper.className = "hera-editable-wrapper " + editable.className;
   editable.parentNode.insertBefore(wrapper ,editable);
 
   wrappedEditable = wrapper.appendChild(editable);
 
-  // Inicializa o modal
+  // Creates and initializes the modal
   let formBox = document.createElement('div');
-  formBox.classList.add("form-box");
+  formBox.classList.add("hera-form-box");
   formBox.appendChild(form);
   wrapper.appendChild(formBox);
   let boxPositionY = wrapper.getBoundingClientRect().top + 150;
@@ -178,7 +181,7 @@ const createForm = (e) => {
   wrappedEditable.removeEventListener('mouseenter', displayEditor);
   wrappedEditable.removeEventListener('mouseleave', hideEditor);
 
-  // Adiciona um botão para destruir o wrapper e o formulário
+  // Adds button to destroy wrapper and the form
   let destroyButton = document.createElement("p");
   destroyButton.className = "form-destroy";
   destroyButton.innerHTML = "<i class='far fa-times-circle'></i> fechar";
@@ -186,21 +189,21 @@ const createForm = (e) => {
     if (wrapper.parentNode) {
       newEditable = wrapper.parentNode.replaceChild(editable, wrapper);
       wrapper.removeChild(formBox);
-      editable.classList.remove('highlight-layer');
-      bodyLayer.classList.remove('clickable');
-      slickerLayer.classList.remove('clickable');
+      editable.classList.remove('hera-highlight-layer');
+      bodyLayer.classList.remove('hera-clickable');
+      slickerLayer.classList.remove('hera-clickable');
       allowEdit();
     }
   });
 
-  let slickerLayer = document.querySelector('.slicker-layer');
-  slickerLayer.classList.add('clickable');
-  slickerLayer.addEventListener('click', () => {
-    destroyButton.click();
-  });
+  // let slickerLayer = document.querySelector('.slicker-layer');
+  // slickerLayer.classList.add('clickable');
+  // slickerLayer.addEventListener('click', () => {
+  //   destroyButton.click();
+  // });
 
-  let bodyLayer = document.querySelector('.background-layer');
-  bodyLayer.classList.add('clickable');
+  let bodyLayer = document.querySelector('.hera-background-layer');
+  bodyLayer.classList.add('hera-clickable');
   bodyLayer.addEventListener('click', () => {
     destroyButton.click();
   });
@@ -210,7 +213,7 @@ const createForm = (e) => {
 
 const linkForm = (form, editable) => {
 
-    // Adiciona um input de texto para editar o inner text do elemento
+    // Creates text input for the content of the element and appends it to the form
     i = document.createElement("input");
     i.setAttribute('type', "text");
     i.setAttribute('name', "link[path]");
@@ -223,14 +226,13 @@ const linkForm = (form, editable) => {
 
 const mediaForm = (form, editable) => {
 
-  // Adiciona um input de texto para editar o inner text do elemento
+   // Creates text input for the content of the element and appends it to the form
   i = document.createElement("input");
   i.setAttribute('type', "file");
   i.setAttribute('name', "media[upload]");
 
   form.appendChild(i);
 
-  // Adiciona um input de texto para editar o inner text do elemento
   i = document.createElement("input");
   i.setAttribute('type', "hidden");
   i.setAttribute('name', "media[upload_cache]");
@@ -241,9 +243,8 @@ const mediaForm = (form, editable) => {
 }
 
 const textForm = (form, editable) => {
-  console.log(editable);
 
-  // Adiciona um input de texto para editar o inner text do elemento
+  // Creates text input for the content of the element and appends it to the form
   i = document.createElement("textarea");
   i.setAttribute('type', "text");
   i.setAttribute('name', "text[inner_text]");
@@ -268,7 +269,7 @@ const formForm = (form, editable) => {
 
 
 const createElementFromHTML = (htmlString) => {
-  // Cria um node element a partir de uma string HTML
+  // Creates a node element from a HTML string
   const div = document.createElement('div');
   div.innerHTML = htmlString.trim();
 
@@ -276,10 +277,8 @@ const createElementFromHTML = (htmlString) => {
 }
 
 
-// Seleciona o botão de modo da view
+// Selects the view's edit button and adds listener to toggle between edit and view mode
 const editButton = document.getElementById('hera-edit-button');
-
 if (editButton) {
-  // Permite alterar entre modo edição e modo view
   editButton.addEventListener('click', toggle_edit_loader)
 }
