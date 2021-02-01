@@ -31,10 +31,14 @@
 
 .hera-navbar img {
   object-fit: contain;
-  margin: -65px 0 -25px 0;
+  /*margin: -65px 0 -25px 0;*/
 }
 .hera-navbar a {
   color: white;
+}
+
+.hera-navbar .margin-auto-center {
+  margin: 0 auto;
 }
 
 #hera-edit-button {

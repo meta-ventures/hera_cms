@@ -1,8 +1,8 @@
 .bundle/
-log/*.log
 pkg/
-spec/dummy/log/*
 spec/dummy/storage/
 spec/dummy/tmp/
-spec/dummy/log/development.log
 .rspec_status
+*.log
+
+spec/dummy/log/*
