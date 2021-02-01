@@ -2,11 +2,15 @@ module HeraCms
   class Engine < ::Rails::Engine
     isolate_namespace HeraCms
 
-    # initialize "hera_cms.load_app_instance_data" do |app|
+    # initializer "hera_cms.load_app_instance_data" do |app|
     #   HeraCms.setup do |config|
     #     config.app_root = app.root
     #   end
     # end
+
+    initializer "hera_cms.load_helpers" do |app|
+      ActiveSupport.on_load(:action_view) { include HeraCms::TagHelper }
+    end
 
     initializer "hera_cms.assets.precompile" do |app|
       if defined?(Sprockets) && Sprockets::VERSION >= "4"
