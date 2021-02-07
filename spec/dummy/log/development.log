@@ -647,3 +647,20 @@ Did you mean?  translate):
     3: <%= hera_link "my-link" %>
   
 app/views/pages/home.html.erb:3
+Started GET "/" for ::1 at 2021-02-07 16:14:05 +0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHeraCms::Link Load (0.3ms)[0m  [1m[34mSELECT "hera_cms_links".* FROM "hera_cms_links" WHERE "hera_cms_links"."identifier" = $1 LIMIT $2[0m  [["identifier", "my-link"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 14.0ms | Allocations: 6489)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms | Allocations: 6743)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `translate_service' for #<#<Class:0x00007fb6e9b22a58>:0x00007fb6f93454d8>
+Did you mean?  translate):
+    1: <h1>Hello dummy world</h1>
+    2: 
+    3: <%= hera_link "my-link" %>
+  
+app/views/pages/home.html.erb:3
