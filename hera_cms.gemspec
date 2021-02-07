@@ -1,5 +1,9 @@
-require_relative 'lib/hera_cms/version'
+$:.push File.expand_path("lib", __dir__)
 
+# Maintain your gem's version:
+require "hera_cms/version"
+
+# Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   spec.name          = "hera_cms"
   spec.version       = HeraCms::VERSION
@@ -10,19 +14,18 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Rayan Castro"]
   spec.email         = ["rayancdc@gmail.com"]
 
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
-
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # to allow pushing to a single host or delete this section to allow pushing to any host.
+  if spec.respond_to?(:metadata)
+    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  else
+    raise "RubyGems 2.0 or newer is required to protect against " \
+      "public gem pushes."
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
 
-  spec.add_dependency "railties", ">= 5"
-  spec.add_dependency "activerecord", ">= 5"
+  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+
   spec.add_dependency "rails", "~> 6.0.3", ">= 6.0.3.4"
 
   spec.add_development_dependency "pg"
-  spec.add_development_dependency 'rspec-rails'
 end

@@ -554,3 +554,96 @@ ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2))
     3: <%= hera_link %>
   
 app/views/pages/home.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1721091371569202325)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1721091371569202325)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "dummy_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "dummy_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2021-02-07 16:05:27 +0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.4ms | Allocations: 426)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 2264)
+
+
+Started GET "/restaurants" for ::1 at 2021-02-07 16:05:33 +0400
+  
+ActionController::RoutingError (No route matches [GET] "/restaurants"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/rayancastro/.rbenv/versions/2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/" for ::1 at 2021-02-07 16:06:12 +0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHeraCms::Link Load (1.3ms)[0m  [1m[34mSELECT "hera_cms_links".* FROM "hera_cms_links" WHERE "hera_cms_links"."identifier" = $1 LIMIT $2[0m  [["identifier", "my-link"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 23.1ms | Allocations: 9236)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.1ms | Allocations: 10160)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `translate_service' for #<#<Class:0x00007fb6fbadd6d0>:0x00007fb6fbae6320>
+Did you mean?  translate):
+    1: <h1>Hello dummy world</h1>
+    2: 
+    3: <%= hera_link "my-link" %>
+  
+app/views/pages/home.html.erb:3
+Started GET "/" for ::1 at 2021-02-07 16:06:50 +0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHeraCms::Link Load (0.2ms)[0m  [1m[34mSELECT "hera_cms_links".* FROM "hera_cms_links" WHERE "hera_cms_links"."identifier" = $1 LIMIT $2[0m  [["identifier", "my-link"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 15.8ms | Allocations: 7736)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.1ms | Allocations: 8143)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `translate_service' for #<#<Class:0x00007fb6aa92b090>:0x00007fb6aa9298a8>
+Did you mean?  translate):
+    1: <h1>Hello dummy world</h1>
+    2: 
+    3: <%= hera_link "my-link" %>
+  
+app/views/pages/home.html.erb:3
+Started GET "/" for ::1 at 2021-02-07 16:08:19 +0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mHeraCms::Link Load (0.1ms)[0m  [1m[34mSELECT "hera_cms_links".* FROM "hera_cms_links" WHERE "hera_cms_links"."identifier" = $1 LIMIT $2[0m  [["identifier", "my-link"], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 16.4ms | Allocations: 7736)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms | Allocations: 8143)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `translate_service' for #<#<Class:0x00007fb6e9b22a58>:0x00007fb6e9b21248>
+Did you mean?  translate):
+    1: <h1>Hello dummy world</h1>
+    2: 
+    3: <%= hera_link "my-link" %>
+  
+app/views/pages/home.html.erb:3
