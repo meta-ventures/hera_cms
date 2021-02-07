@@ -4,5 +4,4 @@ spec/dummy/storage/
 spec/dummy/tmp/
 .rspec_status
 *.log
-
 spec/dummy/log/*

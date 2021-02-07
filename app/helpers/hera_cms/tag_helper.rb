@@ -1,7 +1,8 @@
 module HeraCms
   module TagHelper
     def hera_link(identifier, args = {}, &block)
-      link = Link.identify(identifier)
+      puts "Attempt"
+      link = HeraCms::Link.identify(identifier)
       inner_text, style, identifier, path = translate_service.translate(link), link.style, link.identifier, link.path
       classes = set_classes(args, link)
 
