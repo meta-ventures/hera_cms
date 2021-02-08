@@ -3,6 +3,7 @@ PATH
   specs:
     hera_cms (0.1.0)
       rails (~> 6.0.3, >= 6.0.3.4)
+      yaml
 
 GEM
   remote: https://rubygems.org/
@@ -63,6 +64,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     builder (3.2.4)
+    byebug (11.1.3)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     diff-lcs (1.4.4)
@@ -150,12 +152,14 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    yaml (0.1.1)
     zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   hera_cms!
   pg
   rspec-rails
