@@ -1,27 +1,26 @@
 module HeraCms
   module TagHelper
     def hera_link(identifier, args = {}, &block)
-      puts "Attempt"
-      # link = HeraCms::Link.identify(identifier)
-      # inner_text, style, identifier, path = translate_service.translate(link), link.style, link.identifier, link.path
-      # classes = set_classes(args, link)
+      link = HeraCms::Link.identify(identifier)
+      inner_text, style, identifier, path = link.inner_text, link.style, link.identifier, link.path
+      classes = set_classes(args, link)
 
-      # html_options = {
-      #   class: classes,
-      #   style: style,
-      #   id: identifier,
-      #   data: { editable_id: link.id, editable_type: link.model_name.route_key}
-      # }
+      html_options = {
+        class: classes,
+        style: style,
+        id: identifier,
+        data: { editable_id: link.id, editable_type: link.model_name.route_key}
+      }
 
-      # args[:attributes].each do |key, value|
-      #   html_options[key] = value
-      # end
+      args[:attributes].each do |key, value|
+        html_options[key] = value
+      end
 
-      # if block_given?
-      #   link_to(path, html_options, &block)
-      # else
-      #   link_to(inner_text, path, html_options)
-      # end
+      if block_given?
+        link_to(path, html_options, &block)
+      else
+        link_to(inner_text, path, html_options)
+      end
     end
 
   # BANNER
