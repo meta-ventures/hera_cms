@@ -5,6 +5,10 @@ module HeraCms
       self.find_by(identifier: identifier)
     end
 
+    def editable?
+      true
+    end
+
     def update_seed
       model = self.class.model_name.plural
       file_name = "hera_database_seed.yml"

@@ -12,7 +12,7 @@ module HeraCms
         data: { editable_id: link.id, editable_type: link.model_name.route_key}
       }
 
-      args[:attributes].each do |key, value|
+      args[:attributes]&.each do |key, value|
         html_options[key] = value
       end
 
@@ -25,7 +25,7 @@ module HeraCms
 
   # BANNER
     def hera_media_banner(identifier, args={}, &block)
-      media = Media.identify(identifier)
+      media = HeraCms::Image.identify(identifier)
       identifier, upload, style = media.identifier, media.upload, media.style
       classes = set_classes(args, media)
 
@@ -44,8 +44,8 @@ module HeraCms
     end
 
   # Assign media to rails helpers for videos and images
-    def hera_media_tag(identifier, args = {})
-      media = Media.identify(identifier)
+    def hera_image_tag(identifier, args = {})
+      media = HeraCms::Image.identify(identifier)
       identifier, upload, style = media.identifier, media.upload, media.style
       classes = set_classes(args, media)
       args[:type] ||= "image"
