@@ -3,6 +3,6 @@ module HeraCms
     validates :identifier, presence: true, uniqueness: true
     validates :path, presence: true
 
-    before_save :update_json
+    before_save :update_seed
   end
 end
