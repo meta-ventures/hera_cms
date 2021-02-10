@@ -103,13 +103,13 @@ module HeraCms
     end
 
     def set_editable(editable)
-      editable.classes += " js-editable" if editable.editable? && (editable.classes && !editable.classes.include?("js-editable"))
+      editable.classes += " hera-editable" if editable.editable? && (editable.classes && !editable.classes.include?("hera-editable"))
     end
 
     def set_classes(args, editable)
       args[:add_class] ||= ""
       classes = "#{ args[:class] || editable.classes } #{args[:add_class]}"
-      classes += " js-editable" unless args[:editable] == false || editable.classes.include?("js-editable") || !editable.editable?
+      classes += " hera-editable" unless args[:editable] == false || editable.classes.include?("hera-editable") || !editable.editable?
     end
 
   end

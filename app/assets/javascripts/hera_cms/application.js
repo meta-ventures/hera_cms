@@ -1,17 +1,17 @@
-console.log('Hera CMS Javascript ON');
+console.log('Hera CMS Javascript ON :)');
 
-// Select all editable elements on the page
 let editables = document.querySelectorAll('.hera-editable')
+console.log(editables);
 
 
 const allowEdit = () => {
+  console.log(editables);
   // Add listeners for all editables [edit mode]
   editables.forEach((editable) => {
     editable.addEventListener('mouseenter', displayEditor);
     editable.addEventListener('mouseleave', hideEditor);
   });
 };
-
 
 const lockEdit = () => {
   // Remove listeners for all editables [view mode]
@@ -42,6 +42,9 @@ const toggleOff = () => {
 
 
 const toggle_edit_loader = (e) => {
+  // Select all editable elements on the page
+  editables = document.querySelectorAll('.hera-editable')
+
   // Switches between Edit Mode and View mode
   // In edit mode, all editable links, texts and images need the following:
     // 1. One edit button that appears on hover
@@ -226,7 +229,7 @@ const linkForm = (form, editable) => {
 
 const mediaForm = (form, editable) => {
 
-   // Creates text input for the content of the element and appends it to the form
+  // Creates text input for the content of the element and appends it to the form
   i = document.createElement("input");
   i.setAttribute('type', "file");
   i.setAttribute('name', "media[upload]");
