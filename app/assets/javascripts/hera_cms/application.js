@@ -3,6 +3,8 @@ console.log('Hera CMS Javascript ON :)');
 let editables = document.querySelectorAll('.hera-editable')
 console.log(editables);
 
+const AUTH_TOKEN = document.querySelector('meta[name=csrf-token]').attributes['content'].value;
+console.log(AUTH_TOKEN);
 
 const allowEdit = () => {
   console.log(editables);
@@ -85,6 +87,7 @@ const toggle_edit_loader = (e) => {
 const displayEditor = (e) => {
   // Shows the edit button for an element
   // highlith the field to be edited
+  console.log('display');
   e.target.classList.add('hera-highlight-layer');
   e.target.addEventListener('click', createForm);
 }
@@ -94,6 +97,31 @@ const hideEditor = (e) => {
   // remove highlighted field
   e.target.classList.remove('hera-highlight-layer');
   e.target.removeEventListener('click', createForm);
+}
+
+const sendRequest = (e) => {
+  e.preventDefault();
+  form = e.target;
+  console.log(form.action);
+
+  let url = form.action + "?&authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
+  console.log(url);
+
+  options = {
+    method: "PUT",
+    body: new FormData(form)
+  };
+
+  console.log(options);
+
+  console.log("fetching");
+  fetch(url, options)
+  .then(response => response.json())
+  .then((data) => {
+    console.log(data);
+  });
+
+  console.log('end');
 }
 
 const createForm = (e) => {
@@ -109,10 +137,10 @@ const createForm = (e) => {
   const editable = e.currentTarget
 
   // Creates the base form using rails autenthicity token
-  let form = createElementFromHTML(railsFormHTML());
+  let form = document.createElement("form");
 
   // Updates the form action to the proper element update route, using the datase
-  form.action = `/${editable.dataset['editableType']}/${editable.dataset['editableId']}`;
+  form.action = `/hera_cms/${editable.dataset['editableType']}/${editable.dataset['editableId']}`;
 
   form.enctype = 'multipart/form-data';
 
@@ -187,23 +215,17 @@ const createForm = (e) => {
   // Adds button to destroy wrapper and the form
   let destroyButton = document.createElement("p");
   destroyButton.className = "form-destroy";
-  destroyButton.innerHTML = "<i class='far fa-times-circle'></i> fechar";
+  destroyButton.innerHTML = "x";
   destroyButton.addEventListener('click', () => {
     if (wrapper.parentNode) {
       newEditable = wrapper.parentNode.replaceChild(editable, wrapper);
       wrapper.removeChild(formBox);
       editable.classList.remove('hera-highlight-layer');
       bodyLayer.classList.remove('hera-clickable');
-      slickerLayer.classList.remove('hera-clickable');
       allowEdit();
     }
   });
 
-  // let slickerLayer = document.querySelector('.slicker-layer');
-  // slickerLayer.classList.add('clickable');
-  // slickerLayer.addEventListener('click', () => {
-  //   destroyButton.click();
-  // });
 
   let bodyLayer = document.querySelector('.hera-background-layer');
   bodyLayer.classList.add('hera-clickable');
@@ -211,7 +233,8 @@ const createForm = (e) => {
     destroyButton.click();
   });
 
-  form.appendChild(destroyButton)
+  form.appendChild(destroyButton);
+  form.addEventListener('submit', sendRequest);
 }
 
 const linkForm = (form, editable) => {
