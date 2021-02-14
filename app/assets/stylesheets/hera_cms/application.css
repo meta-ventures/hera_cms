@@ -82,29 +82,30 @@
 .hera-highlight-layer{
   position: relative;
   z-index: 6;
-  background: $body-bg;
+  background: #F5F5F5;
   transition: .5s;
+  padding: 5px;
   border-radius: 3px;
   cursor: pointer;
   color: black !important;
 }
 
 .hera-edit-icon {
-  color: red;
+  color: #EE5F5B;
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
 .hera-form-destroy {
-  color: $white;
+  color: white;
   font-size: 1.2em;
   padding: 0px 16px;
   transition: .5s;
   background-color: black;
 }
 .hera-form-destroy:hover{
-  color: $red;
+  color: #EE5F5B;
   transition: .5s;
   cursor: pointer;
 }
@@ -114,23 +115,19 @@
   border-radius: 8px;
 }
 
-
-
-
-
 .hera-form-box {
   position: absolute;
-  background: $body-bg;
+  background: #F5F5F5;
   width: 300px !important;
-  height: 300px;
+  height: auto;
   z-index: 6;
   padding: 8px !important;
   border-radius: 3px;
-  top: 50%;
-  left: 50%;
+  top: 30px;
+  left: 30px;
   font-size: 20px !important;
   font-weight: normal !important;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .hera-form-box form {
@@ -146,12 +143,12 @@
 }
 .hera-form-box input:last-of-type{
   flex: 0 1 auto;
-  font-family: $body-font !important;
+  font-family: Helvetica;
   font-size: 1rem !important;
 }
 .hera-form-box .form-destroy {
   position: absolute;
-  top: -24px;
-  right: 0;
+  top: -9px;
+  right: 13px;
   font-size: 1rem;
 }
