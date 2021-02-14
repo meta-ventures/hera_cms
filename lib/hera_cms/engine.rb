@@ -2,6 +2,11 @@ module HeraCms
   class Engine < ::Rails::Engine
     isolate_namespace HeraCms
 
+    config.generators do |g|
+      g.test_framework :rspec
+      g.fixture_replacement :factory_bot
+      g.factory_bot dir: 'spec/factories'
+    end
     # initializer "hera_cms.load_app_instance_data" do |app|
     #   HeraCms.setup do |config|
     #     config.app_root = app.root
@@ -25,8 +30,5 @@ module HeraCms
       end
     end
 
-    config.generators do |g|
-      g.test_framework :rspec
-    end
   end
 end
