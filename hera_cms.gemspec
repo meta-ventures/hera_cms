@@ -33,3 +33,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'factory_bot_rails', "~> 6.1.0", ">= 6.1.0"
   spec.add_development_dependency 'byebug', "~> 11.1.3", ">= 11.1.3"
 end
+
+
+# $ gem bump --version minor # bumps to the next minor version
+# $ gem bump --version major # bumps to the next major version
+# $ gem bump --version 1.1.1 # bumps to the specified version 
+
+# gem build hera_cms.gemspec
+# gem push

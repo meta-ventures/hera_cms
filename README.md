@@ -5,9 +5,6 @@
 
 Hera aims to enable you to easily add Content Managment to your Rails projects, with a very friendly user interface.
 
-## Usage
-We use some tables to store the editable content of your website, in order for it to be updatable dynamically by the website owner.
-
 ## Installation
 
 1. Add this line to your application's Gemfile:
@@ -21,7 +18,7 @@ $ bundle
 
 3. The Hera Installer will generate some migrations, that you need to run:
 ```bash
-$ rails hera_cms:install
+$ rails g hera_cms:install
 $ rails db:migrate
 ```
 
@@ -59,6 +56,57 @@ Then, you need to add the Hera navbar to your layout. Here is also highly recomm
 
 
 ```
+
+## Usage
+We use hera_cms tables to store the editable content of your website, in order for it to be updatable dynamically by the website owner.
+
+There are 3 types of editable content you can use: Links, Texts and Images
+
+### Links
+
+To add an editable link to the view, you first need to create it in the rails console
+
+```ruby
+# rails console
+pry(main)> HeraCms::Link.create(identifier: 'home-link-main', inner_text: "HortaTech", path: 'https://www.hortatech.com.br')
+
+```
+
+Then you can just add it to the view using the Hera Link Helper, passing the correct identifier
+
+```erb
+<!-- app/views/pages/home.html.erb  -->
+<!-- ... -->
+
+<%= hera_link 'home-link-main' %>
+
+<!-- ... -->
+
+```
+
+### Textds
+
+To add an editable text to the view, it is exactly like addings links. You first need to create it in the rails console
+
+```ruby
+# rails console
+pry(main)> HeraCms::Text.create(identifier: 'home-description', inner_text: "These are not the droids you're looking for")
+
+```
+
+Then you can just add it to the view using the Hera Text Helper, passing the correct identifier
+
+```erb
+<!-- app/views/pages/home.html.erb  -->
+<!-- ... -->
+
+<%= hera_text 'home-description' %>
+
+<!-- ... -->
+
+```
+
+
 
 ## Contributing
 Contribution directions go here.
