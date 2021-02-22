@@ -7,3 +7,4 @@ spec/dummy/tmp/
 .byebug_history
 spec/dummy/db/hera_cms/*
 spec/dummy/log/*
+hera_cms-*.gem

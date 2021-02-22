@@ -26,10 +26,10 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 6.0.3", ">= 6.0.3.4"
-  spec.add_dependency "yaml"
+  spec.add_dependency "yaml", "~> 0.1.1", ">= 0.1.1"
 
-  spec.add_development_dependency "pg"
-  spec.add_development_dependency 'rspec-rails'
-  spec.add_development_dependency 'factory_bot_rails'
-  spec.add_development_dependency 'byebug'
+  spec.add_development_dependency "pg", "~> 1.2.3", ">= 1.2.3"
+  spec.add_development_dependency 'rspec-rails', "~> 4.0.2", ">= 4.0.2"
+  spec.add_development_dependency 'factory_bot_rails', "~> 6.1.0", ">= 6.1.0"
+  spec.add_development_dependency 'byebug', "~> 11.1.3", ">= 11.1.3"
 end
