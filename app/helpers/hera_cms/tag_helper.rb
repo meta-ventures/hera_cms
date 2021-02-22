@@ -1,5 +1,10 @@
 module HeraCms
   module TagHelper
+
+    def hera_admin_navbar
+      render 'hera_cms/shared/navbar'
+    end
+
     def hera_link(identifier, args = {}, &block)
       link = HeraCms::Link.identify(identifier)
       inner_text, style, identifier, path = link.inner_text, link.style, link.identifier, link.path
