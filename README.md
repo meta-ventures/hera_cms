@@ -1,24 +1,59 @@
 # HeraCms
-Short description and motivation.
+Hera aims to enable you to easily add Content Managment to your Rails projects, with a very friendly user interface.
 
 ## Usage
-How to use my plugin.
+We use some tables to store the editable content of your website, in order for it to be updatable dynamically by the website owner.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'hera_cms'
+1. Add this line to your application's Gemfile:
+```ruby 
+gem 'hera_cms' 
 ```
-
-And then execute:
+2. Execute:
 ```bash
 $ bundle
 ```
 
-Or install it yourself as:
+3. The Hera Installer will generate some migrations, that you need to run:
 ```bash
-$ gem install hera_cms
+$ rails hera_cms:install
+$ rails db:migrate
+```
+
+## Configuration
+
+First, you need to add the Hera routes. Its highly recommended that you add some authentication logic (with devise or another library) to the routes level. Example with Devise:
+
+```ruby
+# config/routes.rb
+authenticate :user, lambda { |u| u.admin? } do
+    mount HeraCms::Engine => "/hera_cms"
+end
+
+```
+
+Then, you need to add the Hera navbar to your layout. Here is also highly recommended to add authentication logic, in order to restrict who is able to update the content of your website. Example with Devise:
+
+```html
+# app/views/layouts/application.html.erb
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- ... -->
+  </head>
+
+  <body>
+    <!-- ... -->
+    <% if current_user&.admin? %>
+        <%= hera_admin_navbar %>
+    <% end %>
+    <%= yield %>
+    <!-- ... -->
+  </body>
+</html>
+
+
 ```
 
 ## Contributing
