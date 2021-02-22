@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'hera_cms/application', media: 'all' %>
+
 <div class="hera-navbar">
   <%= image_tag("hera_cms/hera_white.png") %>
   <div class="margin-auto-center">
@@ -5,3 +7,7 @@
     <button id="hera-edit-button" data-mode="view">Off</button>
   </div>
 </div>
+
+<%= javascript_tag do %>
+  <%= render(partial: 'hera_cms/shared/hera_edit', handlers: [], formats: [:js]) %>
+<% end %>
