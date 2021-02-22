@@ -110,7 +110,7 @@ const sendRequest = (e) => {
   fetch(url, options)
   .then(response => response.json())
   .then((data) => {
-    console.log(data);
+    window.location.replace(data.redirect);
   });
 
   console.log('end');
@@ -152,7 +152,7 @@ const createForm = (e) => {
       form = linkForm(form, editable);
       break;
     case 'media_index':
-      form = mediaForm(form, editable);
+      form = imageForm(form, editable);
       break;
     case 'texts':
       form = textForm(form, editable);
@@ -189,8 +189,7 @@ const createForm = (e) => {
   let screenWidth = window.screen.width;
   let relativeY = (boxPositionY / screenHeight) * screenHeight;
   let relativeX = boxPositionX / screenWidth * screenWidth;
-  console.log(relativeX);
-  console.log(screenWidth/2);
+
   if(relativeX > screenWidth / 2){
     formBox.style.left = "-308px";
   }else{
@@ -231,18 +230,28 @@ const createForm = (e) => {
 
 const linkForm = (form, editable) => {
 
-    // Creates text input for the content of the element and appends it to the form
-    i = document.createElement("input");
-    i.setAttribute('type', "text");
-    i.setAttribute('name', "link[path]");
-    i.setAttribute('value', editable);
+  // Creates text input for the content of the element and appends it to the form
+  pathInput = document.createElement("input");
+  pathInput.setAttribute('type', "text");
+  pathInput.setAttribute('name', "link[path]");
+  pathInput.setAttribute('autocomplete', "off");
+  pathInput.setAttribute('value', editable);
 
-    form.appendChild(i);
+  form.appendChild(pathInput);
 
-    return form;
+  // Creates text input for the content of the element and appends it to the form
+  innerTextInput = document.createElement("input");
+  innerTextInput.setAttribute('type', "text");
+  innerTextInput.setAttribute('name', "link[inner_text]");
+  innerTextInput.setAttribute('autocomplete', "off");
+  innerTextInput.innerHTML = editable.innerText;
+  innerTextInput.setAttribute('value', editable.innerText);
+
+  form.appendChild(innerTextInput);
+  return form;
 }
 
-const mediaForm = (form, editable) => {
+const imageForm = (form, editable) => {
 
   // Creates text input for the content of the element and appends it to the form
   i = document.createElement("input");
@@ -266,6 +275,7 @@ const textForm = (form, editable) => {
   i = document.createElement("textarea");
   i.setAttribute('type', "text");
   i.setAttribute('name', "text[inner_text]");
+  i.setAttribute('autocomplete', "off");
   i.innerHTML = editable.innerText;
   i.setAttribute('value', editable.innerText);
 
