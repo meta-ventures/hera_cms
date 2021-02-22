@@ -26,8 +26,8 @@ RSpec.describe HeraCms::Link, type: :model do
   end
 
   it "is invalid with a duplicate identifier" do
-    link_one = FactoryBot.create(:link)
-    link_two = FactoryBot.build(:link)
+    link_one = FactoryBot.create(:link, identifier: 'identifier-1')
+    link_two = FactoryBot.build(:link, identifier: 'identifier-1')
     link_two.valid?
     expect(link_two.errors[:identifier]).to include("has already been taken")
   end
