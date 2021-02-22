@@ -1,4 +1,8 @@
+---- STILL IN DEVELOPMENT ----
+---- If you want to contribute, feel free to open an issue or contact me at rayan@hortatech.com.br ----
+
 # HeraCms
+
 Hera aims to enable you to easily add Content Managment to your Rails projects, with a very friendly user interface.
 
 ## Usage
