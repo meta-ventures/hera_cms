@@ -120,10 +120,15 @@ Then you can just add it to the view using the Hera Text Helper, passing the cor
 
 ```
 
+### Images
 
+Soon available...
 
 ## Contributing
----- GEM STILL IN DEVELOPMENT ---- If you want to contribute, feel free to open an issue or contact me at rayan@hortatech.com.br ----
+
+---- GEM STILL IN DEVELOPMENT ----
+
+If you want to contribute, feel free to open an issue or contact me at rayan@hortatech.com.br
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
