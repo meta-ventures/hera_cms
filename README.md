@@ -1,6 +1,3 @@
----- STILL IN DEVELOPMENT ----
----- If you want to contribute, feel free to open an issue or contact me at rayan@hortatech.com.br ----
-
 # HeraCms
 
 Hera aims to enable you to easily add Content Managment to your Rails projects, with a very friendly user interface.
@@ -84,7 +81,24 @@ Then you can just add it to the view using the Hera Link Helper, passing the cor
 
 ```
 
-### Textds
+Alternatively, you can create links passing a block, similar to the link_to rails helper
+
+```erb
+<!-- app/views/pages/home.html.erb  -->
+<!-- ... -->
+
+<%= hera_link 'home-link-main', class: 'main-link' do %>
+  <div class="card">
+    <p>Lorem ipsum</p>
+  </div>
+<% end %>
+
+<!-- ... -->
+
+```
+
+
+### Texts
 
 To add an editable text to the view, it is exactly like addings links. You first need to create it in the rails console
 
@@ -100,7 +114,7 @@ Then you can just add it to the view using the Hera Text Helper, passing the cor
 <!-- app/views/pages/home.html.erb  -->
 <!-- ... -->
 
-<%= hera_text 'home-description' %>
+<%= hera_text 'home-description', html_tag: :p %>
 
 <!-- ... -->
 
@@ -109,7 +123,7 @@ Then you can just add it to the view using the Hera Text Helper, passing the cor
 
 
 ## Contributing
-Contribution directions go here.
+---- GEM STILL IN DEVELOPMENT ---- If you want to contribute, feel free to open an issue or contact me at rayan@hortatech.com.br ----
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
