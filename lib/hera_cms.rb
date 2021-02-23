@@ -12,9 +12,10 @@ module HeraCms
 
   # mattr_accessor :app_root
 
-  # class << self
-  #   attr_accessor :s3_bucket
-  # end
+  class << self
+    # attr_accessor :s3_bucket
+    attr_accessor :image_upload, :upload_service
+  end
 
   # Yield self on setup for nice config blocks
   def self.setup

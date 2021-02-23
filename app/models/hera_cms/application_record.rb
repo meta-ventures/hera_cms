@@ -1,6 +1,8 @@
 module HeraCms
   class ApplicationRecord < ActiveRecord::Base
     self.abstract_class = true
+    before_save :update_seed
+
     def self.identify(identifier)
       self.find_by(identifier: identifier)
     end
