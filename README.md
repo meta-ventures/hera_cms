@@ -10,13 +10,13 @@ gem 'hera_cms'
 ```
 2. Execute:
 ```bash
-$ bundle
+bundle
 ```
 
 3. The Hera Installer will generate some migrations, that you need to run:
 ```bash
-$ rails g hera_cms:install
-$ rails db:migrate
+rails g hera_cms:install
+rails db:migrate
 ```
 
 ## Configuration
@@ -122,7 +122,17 @@ Then you can just add it to the view using the Hera Text Helper, passing the cor
 
 ### Images
 
-Soon available...
+Coming soon...
+
+## Production Database
+
+In order to facilitate you not have to duplicate all of your created records from development to production, we use a YAML file to store all record's information from development, located at db/hera_cms/hera_database_seed.yml
+
+After you finish developing your application and want to build it in production, you can just run this command in production to replicate your created Hera Links, Texts and Images to your production database
+
+```bash
+rails hera_cms:populate_database
+```
 
 ## Contributing
 

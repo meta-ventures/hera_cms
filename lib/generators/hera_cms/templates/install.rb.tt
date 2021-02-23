@@ -28,11 +28,5 @@ class <%= migration_class_name %> < ActiveRecord::Migration<%= migration_version
 
       t.timestamps
     end
-
-    create_table :hera_cms_forms do |t|
-      t.string :send_to
-
-      t.timestamps
-    end
   end
 end

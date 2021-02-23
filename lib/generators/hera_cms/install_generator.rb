@@ -11,7 +11,7 @@ module HeraCms
       end
 
       def copy_config
-        template "config.rb", "config/hera.rb"
+        template "config.rb", "config/initializers/hera.rb"
       end
 
       def migration_version
