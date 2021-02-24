@@ -72,7 +72,6 @@ pry(main)> HeraCms::Link.create(identifier: 'home-link-main', inner_text: "Horta
 Then you can just add it to the view using the Hera Link Helper, passing the correct identifier
 
 ```erb
-<!-- app/views/pages/home.html.erb  -->
 <!-- ... -->
 
 <%= hera_link 'home-link-main' %>
@@ -84,7 +83,6 @@ Then you can just add it to the view using the Hera Link Helper, passing the cor
 Alternatively, you can create links passing a block, similar to the link_to rails helper
 
 ```erb
-<!-- app/views/pages/home.html.erb  -->
 <!-- ... -->
 
 <%= hera_link 'home-link-main', class: 'main-link' do %>
@@ -111,7 +109,6 @@ pry(main)> HeraCms::Text.create(identifier: 'home-description', inner_text: "The
 Then you can just add it to the view using the Hera Text Helper, passing the correct identifier
 
 ```erb
-<!-- app/views/pages/home.html.erb  -->
 <!-- ... -->
 
 <%= hera_text 'home-description', html_tag: :p %>
@@ -122,7 +119,51 @@ Then you can just add it to the view using the Hera Text Helper, passing the cor
 
 ### Images
 
-Coming soon...
+To use images that the owner can edit the SRC URL that will be displayed, it's almost the same as the other models
+
+First you create the image in the rails console
+
+```ruby
+# rails console
+pry(main)> HeraCms::Image.create(identifier: 'tutorial-01', url: 'https://picsum.photos/200/300')
+
+```
+
+Then you add it to the view using the Hera Image Helper, passing the correct identifier
+
+```erb
+<!-- ... -->
+
+<%= hera_image 'tutorial-01' %>
+
+<!-- ... -->
+
+```
+
+#### Image uploads
+
+Hera currently has support for Image uploads with Active Storage.
+To enable the owner to change the editable Images by uploading new images, you first need to configure Active Storage properly, according to the [Active Storage Documentation](https://edgeguides.rubyonrails.org/active_storage_overview.html)
+
+After Active Storage is properly set, you will need to update the HeraCms config file
+
+```ruby
+# config/initializers/hera.rb
+HeraCms.setup do |config|
+  config.image_upload = true
+  config.upload_service = :active_storage
+end
+
+```
+
+And create an image with upload in the rails console
+
+```ruby
+# rails console
+pry(main)> image = HeraCms::Image.new(identifier: 'tutorial-02')
+pry(main)> image.upload.attach(io: File.open(Rails.root.join('app/assets/images/logo.jpg')), filename: 'logo.jpg')
+pry(main)> image.save
+```
 
 ## Production Database
 
@@ -134,9 +175,9 @@ After you finish developing your application and want to build it in production,
 rails hera_cms:populate_database
 ```
 
-## Contributing
+For the image uploads, you will have to re-attach your image files to your populated production images
 
----- GEM STILL IN DEVELOPMENT ----
+## Contributing
 
 If you want to contribute, feel free to open an issue or contact me at rayan@hortatech.com.br
 
