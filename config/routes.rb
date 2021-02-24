@@ -3,4 +3,5 @@ HeraCms::Engine.routes.draw do
 
   resources :links, only: :update
   resources :texts, only: :update
+  resources :images, only: :update
 end
