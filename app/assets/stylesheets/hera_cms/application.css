@@ -82,7 +82,7 @@
 .hera-highlight-layer{
   position: relative;
   z-index: 6;
-  background: #F5F5F5;
+  background: #F5F5F5 !important;
   transition: .5s;
   padding: 5px;
   border-radius: 3px;
