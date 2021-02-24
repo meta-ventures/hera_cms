@@ -28,8 +28,44 @@ module HeraCms
       end
     end
 
+    def hera_text(identifier, args = {})
+      text = HeraCms::Text.identify(identifier)
+      inner_text, style, identifier = text.inner_text, text.style, text.identifier
+      classes = set_classes(args, text)
+      args[:html_tag] ||= "p"
+
+      html_options = {
+        class: classes,
+        style: style,
+        id: identifier,
+        data: { editable_id: text.id, editable_type: text.model_name.route_key}
+      }
+      return content_tag(args[:html_tag].to_sym, inner_text, html_options)
+    end
+
+    def hera_image(identifier, args = {})
+      image = HeraCms::Image.identify(identifier)
+      identifier, upload, style = image.identifier, image.upload, image.style
+      classes = set_classes(args, image)
+      args[:type] ||= "image"
+      url = HeraCms.active_storage? ? url_for(upload) : image.url
+
+      html_options = {
+        class: classes,
+        style: style,
+        id: identifier,
+        data: { editable_id: image.id, editable_type: image.model_name.route_key, editable_upload: HeraCms.active_storage? }
+      }
+
+      if args[:type] == "video"
+        content_tag(:div, video_tag(url, style: "max-width: 100%; max-height: 100%;"), html_options)
+      else
+        content_tag(:div, image_tag(url, style: "max-width: 100%; max-height: 100%;"), html_options)
+      end
+    end
+
   # BANNER
-    # def hera_media_banner(identifier, args={}, &block)
+    # def hera_image_banner(identifier, args={}, &block)
     #   media = HeraCms::Image.identify(identifier)
     #   identifier, upload, style = media.identifier, media.upload, media.style
     #   classes = set_classes(args, media)
@@ -49,42 +85,7 @@ module HeraCms
     # end
 
   # Assign media to rails helpers for videos and images
-    # def hera_image_tag(identifier, args = {})
-    #   media = HeraCms::Image.identify(identifier)
-    #   identifier, upload, style = media.identifier, media.upload, media.style
-    #   classes = set_classes(args, media)
-    #   args[:type] ||= "image"
-    #   url = upload.url if upload
 
-    #   html_options = {
-    #     class: classes,
-    #     style: style,
-    #     id: identifier,
-    #     data: { editable_id: media.id, editable_type: media.model_name.route_key}
-    #   }
-
-    #   if args[:type] == "video"
-    #     content_tag(:div, video_tag(url, style: "max-width: 100%; max-height: 100%;"), html_options)
-    #   else
-    #     content_tag(:div, image_tag(url, style: "max-width: 100%; max-height: 100%;"), html_options)
-    #   end
-    # end
-
-  # Generate HTML tag
-    def hera_text(identifier, args = {})
-      text = Text.identify(identifier)
-      inner_text, style, identifier = text.inner_text, text.style, text.identifier
-      classes = set_classes(args, text)
-      args[:html_tag] ||= "p"
-
-      html_options = {
-        class: classes,
-        style: style,
-        id: identifier,
-        data: { editable_id: text.id, editable_type: text.model_name.route_key}
-      }
-      return content_tag(args[:html_tag].to_sym, inner_text, html_options)
-    end
 
   # Generate Form Tag
     # def hera_form(identifier, args = {})
@@ -108,13 +109,13 @@ module HeraCms
     # end
 
     def set_editable(editable)
-      editable.classes += " hera-editable" if editable.editable? && (editable.classes && !editable.classes.include?("hera-editable"))
+      editable.classes += " hera-editable" if editable.editable? && (editable.classes && !editable.classes&.include?("hera-editable"))
     end
 
     def set_classes(args, editable)
       args[:add_class] ||= ""
       classes = "#{ args[:class] || editable.classes } #{args[:add_class]}"
-      classes += " hera-editable" unless args[:editable] == false || editable.classes.include?("hera-editable") || !editable.editable?
+      classes += " hera-editable" unless args[:editable] == false || editable.classes&.include?("hera-editable") || !editable.editable?
     end
 
   end
