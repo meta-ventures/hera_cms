@@ -151,8 +151,12 @@ const createForm = (e) => {
     case 'links':
       form = linkForm(form, editable);
       break;
-    case 'media_index':
-      form = imageForm(form, editable);
+    case 'images':
+      if (editable.dataset['editableUpload'] === "true") {
+        form = imageUploadForm(form, editable);
+      } else {
+        form = imageUrlForm(form, editable);
+      }
       break;
     case 'texts':
       form = textForm(form, editable);
@@ -251,19 +255,32 @@ const linkForm = (form, editable) => {
   return form;
 }
 
-const imageForm = (form, editable) => {
+const imageUploadForm = (form, editable) => {
 
   // Creates text input for the content of the element and appends it to the form
   i = document.createElement("input");
   i.setAttribute('type', "file");
-  i.setAttribute('name', "media[upload]");
+  i.setAttribute('name', "image[upload]");
 
   form.appendChild(i);
 
   i = document.createElement("input");
   i.setAttribute('type', "hidden");
-  i.setAttribute('name', "media[upload_cache]");
+  i.setAttribute('name', "image[upload_cache]");
 
+  form.appendChild(i);
+
+  return form;
+}
+
+const imageUrlForm = (form, editable) => {
+
+  // Creates text input for the content of the element and appends it to the form
+  i = document.createElement("input");
+  i.setAttribute('type', "text");
+  i.setAttribute('name', "image[url]");
+  i.setAttribute('autocomplete', "off");
+  i.setAttribute('value', editable.querySelector('img').src);
   form.appendChild(i);
 
   return form;
