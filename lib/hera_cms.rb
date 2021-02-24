@@ -22,8 +22,8 @@ module HeraCms
     yield self
   end
 
-  def self.test
-    return "Successful"
+  def self.active_storage?
+    self.image_upload && ["active_storage", :active_storage].include?(self.upload_service&.downcase)
   end
 end
 
